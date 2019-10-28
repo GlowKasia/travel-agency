@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +22,4 @@ public class Airport {
     private String name;
 
 
-    public Airport(String name) {
-        this.name = name;
-    }
 }

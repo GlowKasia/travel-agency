@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class City {
 
     @Id
@@ -18,14 +17,9 @@ public class City {
     private Long id;
 
     private String name;
-    private int hotelId;
-    private int countryId;
-    private int airportId;
 
-    public City(String name, int hotelId, int countryId, int airportId) {
-        this.name = name;
-        this.hotelId = hotelId;
-        this.countryId = countryId;
-        this.airportId = airportId;
-    }
+    @ManyToOne
+    private Country country;
+
+
 }

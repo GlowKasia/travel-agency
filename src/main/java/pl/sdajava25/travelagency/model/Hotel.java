@@ -9,6 +9,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class Hotel {
 
     @Id
@@ -22,9 +23,6 @@ public class Hotel {
 
     private String description;
 
-    public Hotel(String name, HotelStandard hotelStandard, String description) {
-        this.name = name;
-        this.hotelStandard = hotelStandard;
-        this.description = description;
-    }
+    @ManyToOne
+    private City city;
 }

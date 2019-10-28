@@ -1,16 +1,17 @@
 package pl.sdajava25.travelagency.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
+@Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Continent {
 
     @Id
@@ -19,7 +20,7 @@ public class Continent {
 
     private String name;
 
-    public Continent(String name) {
-        this.name = name;
-    }
+    @OneToMany(mappedBy = "continent")
+    private List<Country> countries;
+
 }

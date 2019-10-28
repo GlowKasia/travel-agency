@@ -7,7 +7,7 @@ import pl.sdajava25.travelagency.repository.AdministratorRepository;
 @Service
 public class AdministratorService {
 
-    @Autowired
+
     private AdministratorRepository administratorRepository;
 
 

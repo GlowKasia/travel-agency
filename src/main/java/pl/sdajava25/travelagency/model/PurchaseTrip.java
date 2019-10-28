@@ -7,25 +7,23 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class PurchaseTrip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int price;
+    private Integer price;
 
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private DateTimeFormat dateOfPayment;
+    private LocalDate dateOfPayment;
 
     @CreationTimestamp
     @Column(updatable = false)
@@ -33,12 +31,7 @@ public class PurchaseTrip {
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private LocalDateTime dateOfPurchase;
 
-    private int totalTicket;
+    private Integer totalCost;
 
-    public PurchaseTrip(int price, DateTimeFormat dateOfPayment, LocalDateTime dateOfPurchase, int totalTicket) {
-        this.price = price;
-        this.dateOfPayment = dateOfPayment;
-        this.dateOfPurchase = dateOfPurchase;
-        this.totalTicket = totalTicket;
-    }
+
 }
