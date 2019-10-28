@@ -1,4 +1,18 @@
 package pl.sdajava25.travelagency.model;
 
-public class administrator {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Administrator {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 }

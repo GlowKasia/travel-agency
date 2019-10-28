@@ -1,4 +1,4 @@
 package pl.sdajava25.travelagency.repository;
 
-public class UserRepository {
+public interface UserRepository {
 }
