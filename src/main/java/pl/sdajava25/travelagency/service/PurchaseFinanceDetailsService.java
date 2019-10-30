@@ -1,10 +1,10 @@
 package pl.sdajava25.travelagency.service;
 
 import org.springframework.stereotype.Service;
-import pl.sdajava25.travelagency.repository.PurchaseTripRepository;
+import pl.sdajava25.travelagency.repository.PurchaseFinanceDetailsRepository;
 
 @Service
-public class PurchaseTripService {
+public class PurchaseFinanceDetailsService {
 
-    private PurchaseTripRepository purchaseTripRepository;
+    private PurchaseFinanceDetailsRepository purchaseFinanceDetailsRepository;
 }

@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import pl.sdajava25.travelagency.model.PurchaseFinanceDetails;
 @Repository
-public interface PurchaseTripRepository extends JpaRepository<PurchaseFinanceDetails, Long> {
+public interface PurchaseFinanceDetailsRepository extends JpaRepository<PurchaseFinanceDetails, Long> {
 }

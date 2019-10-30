@@ -15,12 +15,8 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
-    @Enumerated(EnumType.STRING)
-    private HotelStandard hotelStandard;
-
+    private String standard;
     private String description;
 
     @ManyToOne

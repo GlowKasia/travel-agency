@@ -15,23 +15,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
-public class PurchaseTrip {
+public class PurchaseFinanceDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer price;
-
-    private LocalDate dateOfPayment;
-
-    @CreationTimestamp
-    @Column(updatable = false)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd HH:mm")
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private LocalDateTime dateOfPurchase;
-
-    private Integer totalCost;
+    private Double adultsCost;
+    private Double childrenCost;
+    private Double totalCost;
 
 
 }

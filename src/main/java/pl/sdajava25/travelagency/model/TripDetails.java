@@ -24,11 +24,13 @@ public class TripDetails {
     private LocalDate dateOfReturn;
     private Integer days;
 
-    @Enumerated(EnumType.STRING)
-    private TypeOfBoard typeOfBoard;
 
-    private Integer pricePerAdult;
-    private Integer pricePerChildren;
+    private String typeOfBoard;
+
+    private Double pricePerAdult;
+    private Double pricePerChildren;
+
+    private String idPromoted;
 
     private Integer numberOfAdult;
     private Integer numberOfChildren;

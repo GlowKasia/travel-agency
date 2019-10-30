@@ -19,7 +19,7 @@ public class User {
     private String surname;
 
     @OneToOne
-    private PurchaseTrip purchaseTrip;
+    private PurchaseFinanceDetails purchaseFinanceDetails;
 
 
 }
