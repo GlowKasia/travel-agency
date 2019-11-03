@@ -2,9 +2,11 @@ package pl.sdajava25.travelagency.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.sdajava25.travelagency.model.Continent;
 import pl.sdajava25.travelagency.model.Country;
 import pl.sdajava25.travelagency.repository.CountryRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +23,19 @@ public class CountryService {
 
     public Optional<Country> getCountryById(Long id) {
         return countryRepository.findById(id);
+    }
+
+    public void addNewCountry(Long continentId, Country country) {
+        Optional<Continent> foundContinent = continentService.getContinentById(continentId);
+        foundContinent.ifPresent(country::setContinent);
+        countryRepository.save(country);
+    }
+
+    public List<Country> getAllCountriesOfGivenContinent(Long id) {
+        return countryRepository.findAllByContinent_Id(id);
+    }
+
+    public List<Country> getAllCountries() {
+        return countryRepository.findAll();
     }
 }

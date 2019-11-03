@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.sdajava25.travelagency.model.City;
 import pl.sdajava25.travelagency.service.CityService;
 
+import java.util.List;
+
 @Controller
 public class CityController {
 
@@ -32,5 +34,19 @@ public class CityController {
                               @ModelAttribute("newCity") City city){
         cityService.addNewCity(countryId, city);
         return "redirect:/city/list/{countryId}";
+    }
+
+    @GetMapping("/city/list/{countryId}")
+    public String getAllCitiesOfGivenCountry(@PathVariable("countryId") Long countryId,
+                                             Model model){
+        List<City> cityList = cityService.getAllCitiesOfGivenCountry(countryId);
+        model.addAttribute("cityList", cityList);
+        return "city/list";
+    }
+
+    @GetMapping("city/all-cities")
+    public String getAllCities(Model model){
+        model.addAttribute("allCities", cityService.getAllCities());
+        return "city/all-cities";
     }
 }
