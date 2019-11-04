@@ -33,4 +33,11 @@ public class AirportService {
     public List<Airport> getAllAirports(){
         return airportRepository.findAll();
     }
+    public List<Airport> getAllAirportsOfGivenCity(Long cityId) {
+        return airportRepository.findAllByCity_Id(cityId);
+    }
+
+    public Airport findByName(String name) {
+        return airportRepository.findByNameContaining(name);
+    }
 }

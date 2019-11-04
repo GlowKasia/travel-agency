@@ -21,7 +21,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String mainPage(Model model){
-        model.addAttribute("allTrips", tripDetailsService.getAllTrips());
+        model.addAttribute("allTrips", tripDetailsService.getAllTrips(pageable));
         model.addAttribute("promotedTrips", tripDetailsService.getPromotedTrips());
         model.addAttribute("allContinents", continentService.getAllContinentsSortedByName());
 

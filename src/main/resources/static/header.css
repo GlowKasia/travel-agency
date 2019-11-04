@@ -1,0 +1,45 @@
+#logo {
+    /*width: 100%;*/
+    background-color: #3f4d57;
+    color: goldenrod;
+    padding: 10px;
+}
+
+#logo h1 {
+    font-size: 32px;
+}
+
+.navbar {
+    background-color: goldenrod;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+.nav-link {
+    width: 150px;
+    height: 38px;
+    background-color: goldenrod;
+    padding: 5px;
+    border-color: #F97300;
+    border-width: 1px;
+    border-style: solid;
+    /*border-color: #F97300;*/
+}
+
+.nav-link a{
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: red;
+}
+
+.user-panel-container {
+    width: 100%;
+}
+
+.user-panel-item {
+    /*background-color: #007bff;*/
+    float: right;
+}

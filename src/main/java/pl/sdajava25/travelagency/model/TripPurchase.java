@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,7 +16,12 @@ public class TripPurchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private TripDetails tripDetails;
+    @OneToOne
     private User user;
     private Integer numberOfAdult;
     private Integer numberOfChildren;
+    @OneToOne
+    private PurchaseFinanceDetails financeDetails;
 }

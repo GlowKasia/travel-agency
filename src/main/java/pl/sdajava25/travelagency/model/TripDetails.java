@@ -17,21 +17,23 @@ public class TripDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String start;
-    private String destination;
-    private LocalDate dateOfDeparture;
-    private LocalDate dateOfReturn;
+    @ManyToOne
+    private City departureCity;
+    @ManyToOne
+    private Airport departureAirport;
+    @ManyToOne
+    private City arrivalCity;
+    @ManyToOne
+    private Airport arrivalAirport;
+    @OneToOne
+    private Hotel hotel;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Integer days;
-
-
     private String typeOfBoard;
-
-    private Double pricePerAdult;
-    private Double pricePerChildren;
-
-    private String idPromoted;
-
+    private double pricePerAdult;
+    private double pricePerChildren;
+    private String isPromoted;
     private Integer numberOfAdult;
     private Integer numberOfChildren;
 
